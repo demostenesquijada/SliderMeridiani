@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Paneles Meridiani</title>
+  <style>
+    #slider-frame {
+      width: 1430px;
+      height: 801px;
+      border: black;
+      border: 0px;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="slider">
+    <iframe id="slider-frame" src=""></iframe>
+  </div>
+
+  <script>
+    var sliderFrames = [
+      'https://docs.google.com/spreadsheets/d/e/2PACX-1vSput3IYAzTq5Du8j1BfesnKU2vFwdild72X-k4XwNrtQJ9OE0LTPURuGXCqI_xDJ2qiMSNhaViWpc-/pubhtml?gid=1620821676&single=true',
+      'https://docs.google.com/spreadsheets/d/e/2PACX-1vSput3IYAzTq5Du8j1BfesnKU2vFwdild72X-k4XwNrtQJ9OE0LTPURuGXCqI_xDJ2qiMSNhaViWpc-/pubhtml?gid=0&single=true'
+    ];
+    var currentIndex = 0;
+    var sliderFrame = document.getElementById('slider-frame');
+
+    function showNextSlide() {
+      sliderFrame.src = sliderFrames[currentIndex];
+      currentIndex = (currentIndex + 1) % sliderFrames.length;
+    }
+
+    setInterval(showNextSlide, 3000); // Cambiar cada 15 segundos
+  </script>
+</body>
+</html>
+  
